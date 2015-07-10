@@ -6,7 +6,7 @@ Uses Nokogiri to fetch context ads from Google, Bing and Yahoo platforms by the 
 require 'ad_scraper'
 time = Time.new
 AdScraper::get_parsed_pages(query_list.split(','), ['yahoo', 'google', 'bing']).each do |page|
-    puts "==== #{page.type.upcase} = #{page.query.upcase} ===="
+    puts "==== #{page.platform.upcase} = #{page.query.upcase} ===="
     page.ads.each do |ad|
         puts
         puts 'HEADLINE: ' + ad[:headline].upcase
